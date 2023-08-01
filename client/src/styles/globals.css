@@ -1,0 +1,42 @@
+/* Register start */
+
+.head{
+  font-size: 2rem;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+
+.input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+
+.login_signup {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.button {
+  margin-top: 50px;
+  padding: 6px 24px;
+  background-color: #7d2ae8;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Register end */
