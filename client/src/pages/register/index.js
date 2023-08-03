@@ -12,11 +12,11 @@ const SignupSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  confirm_password: Yup.string()
+  address: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  address: Yup.string()
+  phone: Yup.number()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
@@ -31,8 +31,8 @@ const Register = () => (
         name: "",
         email: "",
         password: "",
-        confirm_password: "",
-        address: ""
+        address: "",
+        phone:""
       }}
       validationSchema={SignupSchema}
       onSubmit={(values) => {
@@ -76,20 +76,20 @@ const Register = () => (
                   </div>
 
                   <div className="input-block">
-                    <label htmlFor="confirm_password" className="input-label">Confirm Password</label>
-                    <input type="password" autoComplete="off" name="confirm_password" id="confirm_password" 
-                    placeholder="Enter your confirm-password"/>
-                    {errors.confirm_password && touched.confirm_password ? (
-                      <div className="form-error">{errors.confirm_password}</div>
-                    ) : null}
-                  </div>
-
-                  <div className="input-block">
                     <label htmlFor="address" className="input-label">Address</label>
                     <input type="address" autoComplete="off" name="address" id="address" placeholder="Enter your address"
                     />
                     {errors.address && touched.address ? (
                       <div className="form-error">{errors.address}</div>
+                    ) : null}
+                  </div>
+
+                  <div className="input-block">
+                    <label htmlFor="phone" className="input-label">phone</label>
+                    <input type="phone" autoComplete="off" name="phone" id="phone" placeholder="Enter your phone"
+                    />
+                    {errors.phone && touched.phone ? (
+                      <div className="form-error">{errors.phone}</div>
                     ) : null}
                   </div>
 
