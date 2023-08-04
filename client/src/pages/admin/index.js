@@ -12,6 +12,8 @@ const Addproduct = () => {
 
 return (
   <div>
+    <h1 className="head">Add product</h1>
+
     <Formik
       initialValues={{
        productName: "",
@@ -32,7 +34,6 @@ return (
             <div className="modal-container">
               <div className="modal-left">
                 <Form>
-                <h1 className="head">Add product</h1>
 
                   <div className="input-block">
                     <label htmlFor="productName" className="input-label">product Name</label>
