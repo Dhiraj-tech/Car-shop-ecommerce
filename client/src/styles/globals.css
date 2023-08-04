@@ -1,6 +1,4 @@
 *{
-  padding:0;
-  margin: 0;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
  
@@ -36,6 +34,22 @@ p{
   justify-content: center;
   align-items: center;
   
+}
+
+.head{
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 30px;
+}
+
+#productDescription{
+  border-color: #948f8f;
+  color: #fff;
+  margin-top: 10px;
+  height: 10rem;
+  text-align: start;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .modal {
@@ -121,7 +135,8 @@ p{
 }
 
 .input-button {
-  padding: 1.2rem 3.2rem;
+  padding: 1.1rem 3.2rem;
+  margin-top: -10px;
   outline: none;
   text-transform: uppercase;
   border: 0;

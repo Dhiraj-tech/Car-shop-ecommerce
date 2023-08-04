@@ -24,8 +24,6 @@ const SignupSchema = Yup.object().shape({
 
 const Register = () => (
   <div>
-    <h1 className="head">Registration Form</h1>
-
     <Formik
       initialValues={{
         name: "",

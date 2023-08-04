@@ -12,8 +12,6 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => (
   <div>
-    <h1 className="head">Login Form</h1>
-
     <Formik
       initialValues={{
         email: "",
