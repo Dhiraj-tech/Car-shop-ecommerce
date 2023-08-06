@@ -89,6 +89,22 @@ p{
   margin: 6px 0 30px 0;
 }
 
+.card{
+  width: 200px;
+  height: 220px;
+  margin: 10px;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+.Products{
+  display: flex;
+}
+
+.pro-head{
+  text-align: center;
+  margin-top: 40px;
+}
 
 .modal-right {
   flex: 2;

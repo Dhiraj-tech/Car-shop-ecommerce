@@ -6,7 +6,13 @@ const userSchema = new mongoose.Schema({
     password: String,
     address: String,
     phone: Number,
-    role: {type: String, enum: ['admin','user'], default: 'user'}
+    role: {
+      type: String, 
+      enum: ['admin','user'], 
+      default: 'user'
+    },
+    favorites: Array,
+    cartItems: Array
   });
   
 const Users = mongoose.model("Users", userSchema);

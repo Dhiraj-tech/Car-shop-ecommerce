@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
+import NavBar from '@/components/Navbar/index'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,13 +23,17 @@ export default function Home() {
 
   return (
     <div>
+      <NavBar />
+    <h1 className="pro-head">LATEST PRODUCTS:</h1>
      {
       productsList.length> 0 ? (
-        <div>
+        <div className='Products'>
           {productsList.map((item) => (
-          <div>
+          <div className='card'>
+            <Image src="/brake-disk.jpg" width={170} height={190} alt='product image' />
             {item.productName}
             {item.productPrice}
+            <ShoppingCartIcon onClick={() => alert(item._id)}/>
             </div>))}
         </div>
       ) : "loading"
