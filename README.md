@@ -1,6 +1,6 @@
 # Car-shop-ecommerce
 
-Car-shop-ecommerce is an e-commerce website built with the MERN stack (MongoDB, Express, React, and Node.js). It allows users to buy car related spare parts and car accessories online. The website is secured with JSON Web Tokens (JWT) and only allows logged-in users to buy car spare parts and accessories.
+Car-shop-ecommerce is an e-commerce website built with the MERN stack (MongoDB, Express, React, and Node.js). It allows users to buy car related spare parts and car accessories online.
 
 Features:
 
