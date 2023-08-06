@@ -57,19 +57,10 @@ Below are the points that I can implement step by step in my car shop eCommerce 
     - Optimize website performance to ensure fast loading times and a smooth user experience.
     - Utilize caching mechanisms and compress assets to reduce page load times.
 
-16. **SEO-Friendly**
-    - Implement proper meta tags, title tags, and URLs for better search engine visibility.
-    - Generate an XML sitemap to help search engines index the site effectively.
-
-17. **Social Media Integration**
+16. **Social Media Integration**
     - Allow users to share products on social media platforms for better engagement.
 
-18. **Customer Support**
+17. **Customer Support**
     - Provide accessible customer support options like live chat or a contact form.
 
-19. **Newsletter Subscription**
-    - Implement a newsletter subscription feature to keep customers updated on new products and promotions.
-
-20. **Privacy Policy and Terms of Service**
-    - Include clear and comprehensive privacy policies and terms of service to build trust with customers.
 
