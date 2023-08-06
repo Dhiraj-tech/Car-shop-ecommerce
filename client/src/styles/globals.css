@@ -99,6 +99,10 @@ p{
 
 .Products{
   display: flex;
+  margin-left: 40px;
+  margin-top: 23px;
+  gap: 30px;
+  
 }
 
 .pro-head{
