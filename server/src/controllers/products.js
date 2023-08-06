@@ -12,7 +12,7 @@ const getAllProducts = async(req,res) => {
   const data = await Products.find()
   if(data){
     res.json({
-      productsList:data,
+      productsList: data,
       msg:'success'
     })
   }

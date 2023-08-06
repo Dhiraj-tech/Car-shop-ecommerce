@@ -1,6 +1,7 @@
 import React from "react";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import Image from "next/image";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -34,13 +35,13 @@ const Login = () => (
                 <Form>
                   <div className="input-block">
                     <label htmlFor="email" className="input-label">Email</label>
-                    <input type="email" autoComplete="off" name="email" id="email" placeholder="Enter your email address"/>
+                    <Field type="email" autoComplete="off" name="email" id="email" placeholder="Enter your email address"/>
                     {errors.email && touched.email ? <div className="form-error">{errors.email}</div> : null}
                   </div>
 
                   <div className="input-block">
                     <label htmlFor="password" className="input-label">Password</label>
-                    <input type="password" autoComplete="off" name="password" id="password" placeholder="Enter your password"
+                    <Field type="password" autoComplete="off" name="password" id="password" placeholder="Enter your password"
                     />
                     {errors.password && touched.password ? (
                       <div className="form-error">{errors.password}</div>
@@ -58,7 +59,7 @@ const Login = () => (
                 </p>
               </div>
               <div className="modal-right">
-                <img src="sign-in.png" alt="" />
+                <Image src="/sign-in.png" height={500} width={500} alt="login image" />
               </div>
             </div>
           </div>

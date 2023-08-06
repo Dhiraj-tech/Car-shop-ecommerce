@@ -1,6 +1,7 @@
 import React from "react";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import Image from "next/image";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -51,7 +52,7 @@ const Register = () => (
                 <Form>
                   <div className="input-block">
                     <label htmlFor="name" className="input-label">Username</label>
-                    <input type="name" autoComplete="off" name="name" id="name" placeholder="Enter your username"
+                    <Field type="name" autoComplete="off" name="name" id="name" placeholder="Enter your username"
                     />
                     {errors.name && touched.name ? (
                       <div className="form-error">{errors.name}</div>
@@ -60,13 +61,13 @@ const Register = () => (
 
                   <div className="input-block">
                     <label htmlFor="email" className="input-label">Email</label>
-                    <input type="email" autoComplete="off" name="email" id="email" placeholder="Enter your email address"/>
+                    <Field type="email" autoComplete="off" name="email" id="email" placeholder="Enter your email address"/>
                     {errors.email && touched.email ? <div className="form-error">{errors.email}</div> : null}
                   </div>
 
                   <div className="input-block">
                     <label htmlFor="password" className="input-label">Password</label>
-                    <input type="password" autoComplete="off" name="password" id="password" placeholder="Enter your password"
+                    <Field type="password" autoComplete="off" name="password" id="password" placeholder="Enter your password"
                     />
                     {errors.password && touched.password ? (
                       <div className="form-error">{errors.password}</div>
@@ -75,7 +76,7 @@ const Register = () => (
 
                   <div className="input-block">
                     <label htmlFor="address" className="input-label">Address</label>
-                    <input type="address" autoComplete="off" name="address" id="address" placeholder="Enter your address"
+                    <Field type="address" autoComplete="off" name="address" id="address" placeholder="Enter your address"
                     />
                     {errors.address && touched.address ? (
                       <div className="form-error">{errors.address}</div>
@@ -84,7 +85,7 @@ const Register = () => (
 
                   <div className="input-block">
                     <label htmlFor="phone" className="input-label">phone</label>
-                    <input type="phone" autoComplete="off" name="phone" id="phone" placeholder="Enter your phone"
+                    <Field type="phone" autoComplete="off" name="phone" id="phone" placeholder="Enter your phone"
                     />
                     {errors.phone && touched.phone ? (
                       <div className="form-error">{errors.phone}</div>
@@ -100,7 +101,7 @@ const Register = () => (
               </div>
 
               <div className="modal-right">
-                <img src="sign-up.png" alt="" />
+                <Image src="/sign-up.png" alt="sign-up image" height={500} width={500} />
               </div>
 
             </div>
