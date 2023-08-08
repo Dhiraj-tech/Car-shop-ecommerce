@@ -2,7 +2,7 @@
 
 Car-shop-ecommerce is an e-commerce website built with the MERN stack (MongoDB, Express, React, and Node.js). It allows users to buy car related spare parts and car accessories online.
 
-Features:
+# Features:
 
 - Allow users to register, sign in, and manage their accounts securely.
 - Create an admin panel to manage product inventory, user data, and orders efficiently.
@@ -20,11 +20,11 @@ Features:
 - Allow customers to leave reviews and ratings for products
 - Provide contact us form to the user.
 
-Technology used:
+# Technology used:
 
 - MongoDB
 - Express
 - React
 - Node.js
-- JWT
+- Next.js
 
