@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema({
     phone: Number,
     role: {
       type: String, 
-      enum: ['admin','user'], 
-      default: 'user'
+      enum: ['admin','customer'], 
+      default: 'customer'
     },
     favorites: Array,
     cartItems: Array
