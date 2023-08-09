@@ -1,4 +1,5 @@
 const Users = require("../models/users")
+const bcrypt = require('bcrypt')
 
 const registerNewUser = async (req, res) => {
     // if email already exists
@@ -8,6 +9,9 @@ const registerNewUser = async (req, res) => {
       msg: 'User Already Exists'
     })
   } else{
+    //encrypt the password
+    const hashPassword = await bcrypt.hash(req.body.password, 10)
+    req.body.password = hashPassword
     await Users.create(req.body);
       res.status(201).json({
         msg: "User created successfully",
@@ -15,7 +19,7 @@ const registerNewUser = async (req, res) => {
   }
   }
   
-  module.exports = {registerNewUser}
+module.exports = {registerNewUser}
   
     
   
