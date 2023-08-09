@@ -30,7 +30,7 @@ const loginUser = async(req,res) => {
     const isMatched = await bcrypt.compare(req.body.password, data.password)
           if(isMatched){
           // token generating logic
-          const token = jwt.sign({foo: 'bar'}, 'shhhhh')
+          const token = jwt.sign({email: req.body.email }, process.env.SECRET_KEY)
           res.json({
             success: true,
             token
