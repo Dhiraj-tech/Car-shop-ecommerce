@@ -13,6 +13,10 @@ const SignupSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
+  confirm_password: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
   address: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
@@ -71,6 +75,15 @@ const Register = () => (
                     />
                     {errors.password && touched.password ? (
                       <div className="form-error">{errors.password}</div>
+                    ) : null}
+                  </div>
+
+                  <div className="input-block">
+                    <label htmlFor="confirm_password" className="input-label">Confirm Password</label>
+                    <Field type="confirm_password" autoComplete="off" name="confirm_password" id="confirm_password" placeholder="Enter your confirm password"
+                    />
+                    {errors.confirm_password && touched.confirm_password ? (
+                      <div className="form-error">{errors.confirm_password}</div>
                     ) : null}
                   </div>
 
