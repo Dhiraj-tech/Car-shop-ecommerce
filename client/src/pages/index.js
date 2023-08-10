@@ -9,33 +9,32 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout() {
   const { isLoggedIn } = useSelector((state) => state.user);
-  // if (isLoggedIn) {
-  //   return (
-  //     <>
-  //       <NavBar />
-  //       <Home />;
-  //     </>
-  //   );
-  // } else {
-  //   return (
-  //     <>
-  //       <NavBarHome />
-  //       <Home />
-  //     </>
-  //   );
-  // }
-
-
-
-
   if (isLoggedIn) {
     return (
-      <Home />
+      <>
+        <NavBar />
+        <Home />;
+      </>
     );
   } else {
     return (
-      <Login />
+      <>
+        <NavBarHome />
+        <Home />
+      </>
     );
   }
 
+  // if (isLoggedIn) {
+  //   return (
+  //     <Home />
+  //   );
+  // } else {
+  //   return (
+  //     <Login />
+  //   );
+  // }
+
 }
+
+
