@@ -7,7 +7,7 @@ import Login from "./login";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Layout() {
+export default function Main() {
   const { isLoggedIn } = useSelector((state) => state.user);
   if (isLoggedIn) {
     return (

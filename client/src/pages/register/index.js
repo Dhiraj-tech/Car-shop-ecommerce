@@ -22,7 +22,7 @@ const SignupSchema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Required"),
   phone: Yup.number()
-    .min(2, "Too Short!")
+    .min(10, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
 });
@@ -31,7 +31,7 @@ export default function Register() {
 
   const registerUser = async (values) => {
 		try {
-			const response = await fetch("http://localhost:3000/user/register", {
+			const response = await fetch("http://localhost:8080/register", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -52,6 +52,7 @@ export default function Register() {
         name: "",
         email: "",
         password: "",
+        confirm_password:"",
         address: "",
         phone:""
       }}
@@ -98,7 +99,7 @@ export default function Register() {
 
                   <div className="input-block">
                     <label htmlFor="confirm_password" className="input-label">Confirm Password</label>
-                    <Field type="confirm_password" autoComplete="off" name="confirm_password" id="confirm_password" placeholder="Enter your confirm password"
+                    <Field type="password" autoComplete="off" name="confirm_password" id="confirm_password" placeholder="Enter your confirm password"
                     />
                     {errors.confirm_password && touched.confirm_password ? (
                       <div className="form-error">{errors.confirm_password}</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "@/components/Card/index";
 
-export default function Home() {
+function Home() {
   return (
     <div className="main">
       <div>
@@ -29,3 +29,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home

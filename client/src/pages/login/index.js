@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 import { setUserDetails } from "@/redux/reducerSlices/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -14,10 +14,10 @@ const LoginSchema = Yup.object().shape({
 });
 
 export default function Login() {
+  const dispatch = useDispatch()
   const handleLogin = async (values) => {
-    const dispatch = useDispatch()
 		try {
-			const response = await fetch("http://localhost:3000/user/login", {
+			const response = await fetch("http://localhost:8080/login", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -26,7 +26,7 @@ export default function Login() {
 			});
 			const result = await response.json();
       debugger;
-      dispatch(setUserDetails())
+      dispatch(setUserDetails(result))
 		} catch (error) {
 			console.error("Error posting data:", error);
 		}
