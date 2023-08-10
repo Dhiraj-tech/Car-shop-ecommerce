@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 export default function MediaCard() {
     const [productsList, setProductsList] = React.useState([])
 
-    const fetchAllProducts = async( ) => {
+    const fetchAllProducts = async() => {
         const res = await fetch('http://localhost:8080/products')
         const data = await res.json()
         setProductsList(data.productsList)
