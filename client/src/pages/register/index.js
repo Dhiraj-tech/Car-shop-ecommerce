@@ -27,7 +27,25 @@ const SignupSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const Register = () => (
+export default function Register() {
+
+  const registerUser = async (values) => {
+		try {
+			const response = await fetch("http://localhost:3000/user/register", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(values),
+			});
+			const result = await response.json();
+			console.log("Post response:", result);
+		} catch (error) {
+			console.error("Error posting data:", error);
+		}
+	};
+
+	return (
   <div>
     <Formik
       initialValues={{
@@ -40,7 +58,7 @@ const Register = () => (
       validationSchema={SignupSchema}
       onSubmit={(values) => {
         // same shape as initial values
-        console.log(values);
+        registerUser(values);
       }}
     >
       {({ errors, touched }) => (
@@ -123,6 +141,5 @@ const Register = () => (
       )}
     </Formik>
   </div>
-);
-
-export default Register;
+  );
+}

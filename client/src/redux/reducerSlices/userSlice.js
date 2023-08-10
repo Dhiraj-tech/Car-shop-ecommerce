@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const initialState = {
   userDetails: {},
   isLoggedIn: false,
-  name: 'ram' // to check redux is working or not
+  success: true
 };
 
 const UserSlice = createSlice({
@@ -11,6 +11,13 @@ const UserSlice = createSlice({
   initialState,
   reducers: {
     setUserDetails: (state, actions) => {
+      return{
+        ...state,
+        token: actions.payload.token,
+        isLoggedIn: actions.payload.userDetails
+    }
+    },
+    handleLogout: (state, actions) => {
 
     },
   },

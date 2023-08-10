@@ -27,13 +27,16 @@ const loginUser = async(req,res) => {
   const data = await Users.findOne({email: req.body.email})
   console.log(data)
   if(data){
-    const isMatched = await bcrypt.compare(req.body.password, data.password)
+    const isMatched = await bcrypt.compare(req.body.password, data.password).lean
           if(isMatched){
+            const {password, ...userDetails } = data
+            console.log(allOthers)
           // token generating logic
           const token = jwt.sign({email: req.body.email }, process.env.SECRET_KEY)
           res.json({
             success: true,
-            token
+            token,
+            userDetails
           })
           }else{
             res.json({

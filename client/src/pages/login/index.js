@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
+import { setUserDetails } from "@/redux/reducerSlices/userSlice";
+import { useDispatch } from "react-redux";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -11,8 +13,26 @@ const LoginSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const Login = () => (
-  <div>
+export default function Login() {
+  const handleLogin = async (values) => {
+    const dispatch = useDispatch()
+		try {
+			const response = await fetch("http://localhost:3000/user/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(values),
+			});
+			const result = await response.json();
+      debugger;
+      dispatch(setUserDetails())
+		} catch (error) {
+			console.error("Error posting data:", error);
+		}
+	};
+  return (
+    <div>
     <Formik
       initialValues={{
         email: "",
@@ -21,7 +41,7 @@ const Login = () => (
       validationSchema={LoginSchema}
       onSubmit={(values) => {
         // same shape as initial values
-        console.log(values);
+        handleLogin(values);
       }}
     >
       {({ errors, touched }) => (
@@ -67,6 +87,7 @@ const Login = () => (
       )}
     </Formik>
   </div>
-);
+  );
 
-export default Login;
+}
+

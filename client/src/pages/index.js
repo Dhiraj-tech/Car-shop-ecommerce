@@ -1,27 +1,41 @@
 import { Inter } from "next/font/google";
 import NavBar from "@/components/Navbar/index";
-import Card from "@/components/Card/index";
+import NavBarHome from "@/components/Navbarhome/index";
 import { useSelector } from "react-redux";
+import Home from "./home";
+import Login from "./login";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Layout() {
+  const { isLoggedIn } = useSelector((state) => state.user);
+  // if (isLoggedIn) {
+  //   return (
+  //     <>
+  //       <NavBar />
+  //       <Home />;
+  //     </>
+  //   );
+  // } else {
+  //   return (
+  //     <>
+  //       <NavBarHome />
+  //       <Home />
+  //     </>
+  //   );
+  // }
 
-  // to check redux is working or not
-  const { name } = useSelector((state) => state.user);
 
-  return (
-    <>
-      <div>
-        <NavBar />
-        <h1 className="pro-head">LATEST PRODUCTS:</h1>
-        <Card />
-      </div>
 
-      {/* to check redux is working or not */}
-      <div>{name}</div>;
-    </>
-  );
+
+  if (isLoggedIn) {
+    return (
+      <Home />
+    );
+  } else {
+    return (
+      <Login />
+    );
+  }
+
 }
-
-
