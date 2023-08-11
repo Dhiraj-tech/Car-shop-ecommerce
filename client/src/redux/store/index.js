@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import userSlice from "../reducerSlices/userSlice";
-import logger from 'redux-logger'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
+import logger from 'redux-logger'
 
 const persistConfig = {
   key: 'root',

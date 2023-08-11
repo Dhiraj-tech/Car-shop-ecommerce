@@ -22,14 +22,16 @@ const SignupSchema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Required"),
   phone: Yup.number()
-    .min(6, "Too Short!")
-    .max(15, "Too Long!")
+    .min(10, "Too Short!")
+    .typeError("That doesn't look like a phone number")
+    .positive("A phone number can't start with a minus")
+    .integer("A phone number can't include a decimal point")
     .required("Required"),
 });
 
 export default function Register() {
 
-  cosnt [responseMsg, setResponseMsg] = useState({ msgLabel: '', msgType:'' })
+  const [responseMsg, setResponseMsg] = useState({ msgLabel: '', msgType:'' })
 
   const registerUser = async (values) => {
 		try {
