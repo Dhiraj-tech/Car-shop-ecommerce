@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
+import { Alert } from '@mui/material';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -10,24 +11,25 @@ const SignupSchema = Yup.object().shape({
     .required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string()
-    .min(2, "Too Short!")
+    .min(6, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
   confirm_password: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+		.oneOf([Yup.ref("password"), null], "Passwords do not match")
+		.required("Required"),
   address: Yup.string()
-    .min(2, "Too Short!")
+    .min(6, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
   phone: Yup.number()
-    .min(10, "Too Short!")
-    .max(50, "Too Long!")
+    .min(6, "Too Short!")
+    .max(15, "Too Long!")
     .required("Required"),
 });
 
 export default function Register() {
+
+  cosnt [responseMsg, setResponseMsg] = useState({ msgLabel: '', msgType:'' })
 
   const registerUser = async (values) => {
 		try {
@@ -39,8 +41,13 @@ export default function Register() {
 				body: JSON.stringify(values),
 			});
 			const result = await response.json();
-			console.log("Post response:", result);
+      if(response.status){
+        setResponseMsg({ msgLabel: result.msg, 
+          msgType: response.status == 409 ?'error': 'success' })
+      }
+
 		} catch (error) {
+      setResponseMsg({msgLabel: 'Something went wrong', msgType: 'error' })
 			console.error("Error posting data:", error);
 		}
 	};
@@ -52,7 +59,6 @@ export default function Register() {
         name: "",
         email: "",
         password: "",
-        confirm_password:"",
         address: "",
         phone:""
       }}
@@ -73,6 +79,8 @@ export default function Register() {
                   Sign Up and get access to all the features of Carshop.
                 </p>
                 <Form>
+                {responseMsg.msgType && <Alert severity={responseMsg.msgType} onClose={() => setResponseMsg({ msgLabel: '', msgType:'' })}>{responseMsg.msgLabel}</Alert>}
+                 
                   <div className="input-block">
                     <label htmlFor="name" className="input-label">Username</label>
                     <Field type="name" autoComplete="off" name="name" id="name" placeholder="Enter your username"

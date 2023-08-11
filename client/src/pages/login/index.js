@@ -25,6 +25,7 @@ export default function Login() {
 				body: JSON.stringify(values),
 			});
 			const result = await response.json();
+      
       dispatch(setUserDetails(result))
 		} catch (error) {
 			console.error("Error posting data:", error);
