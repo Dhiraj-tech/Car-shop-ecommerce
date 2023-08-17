@@ -48,6 +48,10 @@ p{
   margin-bottom: 20px;
 }
 
+#button21{
+  margin-right: 10px;
+}
+
 .modal {
   width: 100%;
   display: flex;

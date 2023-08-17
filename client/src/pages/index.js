@@ -17,8 +17,11 @@ export default function Main() {
     );
   } else {
     return (
+      <>
+      <NavBar />
       <Login />
-    );
+      </>
+    )
   }
 
 }

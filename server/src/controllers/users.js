@@ -21,7 +21,7 @@ const registerNewUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   // req.body -> email, password
   const data = await Users.findOne({ email: req.body.email }).lean();
   if (data) {
