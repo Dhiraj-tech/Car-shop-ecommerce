@@ -4,7 +4,7 @@ Car-shop-ecommerce is an e-commerce website built with the MERN stack (MongoDB, 
 
 # Features:
 
-[][] Allow users to register, sign in, and manage their accounts securely.
+- Allow users to register, sign in, and manage their accounts securely.
 - Create an admin panel to manage product inventory, user data, and orders efficiently.
 - Implement password encryption for enhanced security.
 - Authentication implemented using Json Web Token(JWT)
