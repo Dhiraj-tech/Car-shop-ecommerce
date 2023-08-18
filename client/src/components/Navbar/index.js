@@ -94,6 +94,7 @@ function ResponsiveAppBar() {
           width: "100%",
           [theme.breakpoints.up("sm")]: {
             width: "15rem",
+            fontSize:13,
             "&:focus": {
               width: "25rem",
             },
@@ -300,7 +301,7 @@ if (isLoggedIn) {
     return (
       <>
       <AppBar position="static">
-        <Container maxWidth="xl">
+        <Container className='contain-nav' maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
               variant="h3"
@@ -320,7 +321,8 @@ if (isLoggedIn) {
               CARSHOP
             </Typography>
   
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },fontFamily: 'monospace' }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },fontFamily: 'monospace' ,      
+          }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -376,6 +378,7 @@ if (isLoggedIn) {
             >
               CARSHOP
             </Typography>
+
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },fontFamily: 'monospace' }}>
               {pages.map((page) => (
                 <Button
@@ -437,8 +440,9 @@ if (isLoggedIn) {
               fontSize: 11,
               backgroundColor: 'white',
               "&:hover": {
-                backgroundColor: 'black',
-                color: 'white'},
+                backgroundColor: 'purple',
+                color:'white',
+            },
             }}
             >LOGIN</Button>
             <Button href="/register"
@@ -451,8 +455,8 @@ if (isLoggedIn) {
               fontSize: 11,
               backgroundColor: 'white',
               "&:hover": {
-                backgroundColor: 'black',
-                color: 'white'
+                backgroundColor: 'purple',
+                color:'white',
               },
             }}
             >SIGNUP</Button>
