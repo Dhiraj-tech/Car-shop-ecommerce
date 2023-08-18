@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import NavBar from "@/components/Navbar/index";
 import { useSelector } from "react-redux";
 import Home from "./home";
-import Login from "./login";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +20,7 @@ export default function Main() {
     return (
       <>
       <NavBar />
-      <Login />
+      <Home />
       <Footer />
       </>
     )
