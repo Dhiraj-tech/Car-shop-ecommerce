@@ -106,7 +106,7 @@ function ResponsiveAppBar() {
 if (isLoggedIn) {
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container className='contain-nav' maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h3"
