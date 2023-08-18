@@ -61,13 +61,15 @@ function ResponsiveAppBar() {
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
     "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      // backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
     width: "100%",
+    fontFamily: 'monospace',
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",
+      fontFamily: 'monospace',
     },
   }));
 
@@ -78,11 +80,12 @@ function ResponsiveAppBar() {
     pointerEvents: "none",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    fontFamily: 'monospace'
   }));
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
-        color: "inherit",
+        fontFamily: 'monospace',
         "& .MuiInputBase-input": {
           padding: theme.spacing(1, 1, 1, 0),
           // vertical padding + font size from searchIcon
@@ -90,9 +93,9 @@ function ResponsiveAppBar() {
           transition: theme.transitions.create("width"),
           width: "100%",
           [theme.breakpoints.up("sm")]: {
-            width: "20rem",
+            width: "15rem",
             "&:focus": {
-              width: "30rem",
+              width: "25rem",
             },
           },
         },
@@ -105,7 +108,7 @@ if (isLoggedIn) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h3"
             noWrap
             component="a"
             href="/"
@@ -122,7 +125,7 @@ if (isLoggedIn) {
             CARSHOP
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },fontFamily: 'monospace' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -149,6 +152,7 @@ if (isLoggedIn) {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
+                fontFamily: 'monospace'
               }}
             >
               {pages.map((page) => (
@@ -177,20 +181,32 @@ if (isLoggedIn) {
           >
             CARSHOP
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },fontFamily: 'monospace' }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block' , fontSize: 12, fontFamily: 'monospace'}}
               >
                 {page}
               </Button>
             ))}
             
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg:'flex', md: 'none' } }}>
-            <Search>
+          <Box sx={{display: { xs: 'flex', lg:'flex', md: 'none' },fontFamily: 'monospace' }}>
+            <Search
+            sx={{
+              mr: 2,
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              textDecoration: 'none',
+              backgroundColor: 'white',
+              color: 'black',
+              display: { xs: 'flex', lg:'flex', md: 'none' }
+            }}
+            >
               <SearchIconWrapper>
                 <SearchIcon />
             </SearchIconWrapper>
@@ -200,7 +216,7 @@ if (isLoggedIn) {
               />
             </Search>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" },fontFamily: 'monospace' }}>
               <IconButton
                  size="large"
                 aria-label="show 4 new mails"
@@ -239,9 +255,39 @@ if (isLoggedIn) {
               onClose={handleCloseUserMenu}
             >
               
-                <MenuItem onClick={()=> router.push('/profile')}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>Settings</MenuItem>
-                <MenuItem onClick={()=>dispatch(handleLogout())}>Logout</MenuItem>
+                <MenuItem onClick={()=> router.push('/profile')}
+                sx={{
+                  mr: 1,
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  backgroundColor: 'white',
+                  color: 'black',
+                  fontSize: 11
+                }}
+                >Profile</MenuItem>
+                <MenuItem onClick={handleClose}
+                sx={{
+                  mr: 1,
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  backgroundColor: 'white',
+                  color: 'black',
+                  fontSize: 11
+                }}
+                >Settings</MenuItem>
+                <MenuItem onClick={()=>dispatch(handleLogout())}
+                sx={{
+                  mr: 1,
+                  fontFamily: 'monospace',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  backgroundColor: 'white',
+                  color: 'black',
+                  fontSize: 11
+                }}
+                >Logout</MenuItem>
                 
               
             </Menu>
@@ -252,11 +298,12 @@ if (isLoggedIn) {
   );
   }else{
     return (
+      <>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
-              variant="h6"
+              variant="h3"
               noWrap
               component="a"
               href="/"
@@ -273,7 +320,7 @@ if (isLoggedIn) {
               CARSHOP
             </Typography>
   
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },fontFamily: 'monospace' }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -299,7 +346,8 @@ if (isLoggedIn) {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: 'block', md: 'none'},
+                  fontFamily: 'monospace'
                 }}
               >
                 {pages.map((page) => (
@@ -328,32 +376,43 @@ if (isLoggedIn) {
             >
               CARSHOP
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },fontFamily: 'monospace' }}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'white', display: 'block', fontSize: 12,fontFamily: 'monospace' }}
                 >
                   {page}
                 </Button>
               ))}
-              
+
             </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', lg:'flex', md: 'none' } }}>
-              <Search>
+            <Box sx={{display: { xs: 'flex', lg:'flex', md: 'none' } ,fontFamily: 'monospace'}}>
+              <Search
+              sx={{
+                mr: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                textDecoration: 'none',
+                backgroundColor: 'white',
+                color: 'black',
+                display: { xs: 'flex', lg:'flex', md: 'none' }
+              }}>
                 <SearchIconWrapper>
                   <SearchIcon />
               </SearchIconWrapper>
                 <StyledInputBase
                   placeholder="Search…"
                   inputProps={{ "aria-label": "search" }}
+
                 />
               </Search>
             </Box>
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ display: { xs: "none", md: "flex" }, fontFamily: 'monospace' }}>
                 <IconButton
-                   size="large"
+                  size="large"
                   aria-label="show 4 new mails"
                   color="inherit"
                 >
@@ -367,11 +426,44 @@ if (isLoggedIn) {
                    color="inherit"
                 ></IconButton>
             </Box> 
-            <Button variant="contained" id='button21' color="secondary" href="/login">LOGIN</Button>
-            <Button variant="contained" color="secondary" href="/register">SIGNUP</Button>
+            <Button href="/login"
+            sx={{
+              mr: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.2rem',
+              textDecoration: 'none',
+              color: 'black',
+              fontSize: 11,
+              backgroundColor: 'white',
+              "&:hover": {
+                backgroundColor: 'black',
+                color: 'white'},
+            }}
+            >LOGIN</Button>
+            <Button href="/register"
+            sx={{
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.2rem',
+              textDecoration: 'none',
+              color: 'black',
+              fontSize: 11,
+              backgroundColor: 'white',
+              "&:hover": {
+                backgroundColor: 'black',
+                color: 'white'
+              },
+            }}
+            >SIGNUP</Button>
+            
           </Toolbar>
         </Container>
       </AppBar>
+
+
+      
+    </>
     );
   }
 }

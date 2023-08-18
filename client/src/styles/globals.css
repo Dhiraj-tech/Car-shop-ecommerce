@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
 }
 
@@ -46,10 +46,6 @@ p{
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-#button21{
-  margin-right: 10px;
 }
 
 .modal {
