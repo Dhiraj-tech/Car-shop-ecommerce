@@ -4,49 +4,40 @@ import Card from "@/components/Card/index";
 function Home() {
   return (
     <>
-    
-    <section className="homepage" id="home">
-      <div className="content">
-        <div className="text">
-          <h1>ONE STOP SOLUTION</h1>
-          <p>
-            FOR ALL YOUR CAR NEEDS</p>
+      <section className="homepage" id="home">
+        <div className="content">
+          <div className="text">
+            <h1>ONE STOP SOLUTION</h1>
+            <p>FOR ALL YOUR CAR NEEDS</p>
+          </div>
+          <a href="#">Browse Products</a>
         </div>
-        <a href="#">Browse Products</a>
+      </section>
+
+      <div className="main">
+        <div>
+          <h1 className="pro-head">LATEST PRODUCTS:</h1>
+          <Card />
+        </div>
+
+        <div className="divider">
+          <hr />
+        </div>
+
+        <div>
+          <h1 className="pro-head">FEATURED PRODUCTS:</h1>
+        </div>
+
+        <div className="divider">
+          <hr />
+        </div>
+
+        <div>
+          <h1 className="pro-head">TOP SELLING PRODUCTS:</h1>
+        </div>
       </div>
-    </section>
-
-      
-
-    <div className="main">
-      <div>
-        <h1 className="pro-head">LATEST PRODUCTS:</h1>
-        <Card />
-      </div>
-
-      <div className="divider">
-        <hr />
-      </div>
-
-      <div>
-        <h1 className="pro-head">FEATURED PRODUCTS:</h1>
-      </div>
-
-      <div className="divider">
-        <hr />
-      </div>
-
-      <div>
-        <h1 className="pro-head">TOP SELLING PRODUCTS:</h1>
-      </div>
-      
-      
-    </div>
-
-</>
-
+    </>
   );
 }
 
-export default Home
-
+export default Home;
