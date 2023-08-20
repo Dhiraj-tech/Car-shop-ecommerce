@@ -30,19 +30,19 @@ const loginUser = async (req, res) => {
       const { password, ...userDetails } = data;
       // token generating logic
       const token = jwt.sign({ email: req.body.email }, process.env.SECRET_KEY);
-      res.json({
+      res.status(200).json({
         success: true,
         token,
         userDetails,
       });
     } else {
-      res.json({
+      res.status(422).json({
         success: false,
         msg: "Incorrect login credentials",
       });
     }
   } else {
-    res.json({
+    res.status(400).json({
       success: false,
       msg: "No User Found",
     });

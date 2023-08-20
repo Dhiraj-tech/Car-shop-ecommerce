@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 import { Alert } from '@mui/material';
+import Link from "next/link";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -139,7 +140,7 @@ export default function Register() {
                   </div>
 
                 </Form>
-                <p className="sign-up">Already have an account? <a href="/login">Sign In now</a></p>
+                <p className="sign-up">Already have an account? <Link href="/login">Sign In now</Link></p>
               </div>
 
               <div className="modal-right">
