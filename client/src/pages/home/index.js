@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "@/components/Card/index";
+import Link from "next/link";
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
             <h1>ONE STOP SOLUTION</h1>
             <p>FOR ALL YOUR CAR NEEDS</p>
           </div>
-          <a href="#">Browse Products</a>
+          <Link href="#">Browse Products</Link>
         </div>
       </section>
 

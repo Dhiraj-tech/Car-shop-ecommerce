@@ -307,9 +307,8 @@ if (isLoggedIn) {
               variant="h3"
               noWrap
               component="a"
-              href="/"
               sx={{
-                mr: 2,
+                mr: 25,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 700,
@@ -364,7 +363,6 @@ if (isLoggedIn) {
               variant="h5"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },

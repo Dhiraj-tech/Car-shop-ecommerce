@@ -232,6 +232,7 @@ p{
   background-color: #121315;
 }
 
+
 /* homwpage start */
 
 .homepage {
@@ -383,21 +384,7 @@ input,
   background-color: #c7940a;
   color: #ffffff;
 }
-div.social {
-  display: flex;
-  justify-content: space-around;
-  font-size: 2.4em;
-  flex-direction: row;
-  margin-top: 0.5em;
-}
-.social i {
-  color: #bac6d9;
-}
 
-.copyright {
-  padding: 0.3em 1em;
-  background-color: #25262e;
-}
 .footer-menu{
   float: left;
     margin-top: 10px;
@@ -412,10 +399,7 @@ div.social {
 .footer-menu a:hover{
   color: #27bcda;
 }
-.copyright p {
-  font-size: 0.9em;
-  text-align: right;
-}
+
 @media screen and (max-width: 850px) {
   .row.primary {
     grid-template-columns: 1fr;
