@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deepOrange } from "@mui/material/colors";
 import { useRouter } from "next/router";
 
-// const pages  = ["Home", "About Us", "Contact Us", "Categories"];
+const pages  = ["Home", "About Us", "Contact Us", "Products"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -185,10 +185,21 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
+                    <MenuItem key={page} onClick={(e) => {
+                      if (page === "Home") {
+                        router.push('/');
+                      }else if (page === "About Us") {
+                        router.push('/about');
+                      }else if (page === "Contact Us") {
+                        router.push('/contact');
+                      }else if (page === "Products") {
+                        router.push('/product');
+                      }  
+                      homeNavMenu(e);
+                    }}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </MenuItem>
+                  ))}
               </Menu>
             </Box>
             <Typography
@@ -457,11 +468,22 @@ function ResponsiveAppBar() {
                     fontFamily: "monospace",
                   }}
                 >
-                  {/* {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  {pages.map((page) => (
+                    <MenuItem key={page} onClick={(e) => {
+                      if (page === "Home") {
+                        router.push('/');
+                      }else if (page === "About Us") {
+                        router.push('/about');
+                      }else if (page === "Contact Us") {
+                        router.push('/contact');
+                      }else if (page === "Products") {
+                        router.push('/product');
+                      }  
+                      homeNavMenu(e);
+                    }}>
                       <Typography textAlign="center">{page}</Typography>
                     </MenuItem>
-                  ))} */}
+                  ))}
                 </Menu>
               </Box>
               <Typography
