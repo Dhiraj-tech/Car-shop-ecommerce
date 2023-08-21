@@ -38,16 +38,16 @@ function Footer() {
             <h3 className="footer-head3">Some Links</h3>
             <ul className="footer-ul">
               <li>
-                <Link href="#">Home</Link>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="#">About</Link>
+                <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="#">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
               <li>
-                <Link href="#">Blog</Link>
+                <Link href="/product">Product</Link>
               </li>
             </ul>
           </div>
