@@ -1,5 +1,6 @@
 const express = require("express");
 const UserRoutes = require("./routes/users")
+const ContactRoutes = require("./routes/contacts")
 const ProductRoutes = require("./routes/products")
 
 const cors = require('cors')
@@ -12,6 +13,7 @@ require('dotenv').config()
 app.use(cors())
 app.use(express.json());
 app.use(UserRoutes)
+app.use(ContactRoutes)
 app.use(ProductRoutes)
 
 connectDb();
