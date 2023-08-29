@@ -1082,4 +1082,6 @@ body {
 
 /* about us end */
 
-
+#message-group{
+  height: 120px;
+}

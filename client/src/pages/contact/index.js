@@ -11,6 +11,7 @@ const ContactSchema = Yup.object().shape({
 });
 
 export default function Contact() {
+
   const contactUser = async (values) => {
     try {
       const response = await fetch("http://localhost:8080/contact", {
@@ -20,7 +21,6 @@ export default function Contact() {
         },
         body: JSON.stringify(values),
       });
-      const result = await response.json();
 
       if (response.status == 201) {
         toast.success("Message sent successful!");
@@ -95,12 +95,12 @@ export default function Contact() {
                       ) : null}
                     </div>
 
-                    <div className="input-block">
+                    <div className="input-block" id="message-group">
                       <label htmlFor="message" className="input-label">
                         Message
                       </label>
                       <Field
-                        type="message"
+                        type="textarea"
                         autoComplete="off"
                         name="message"
                         id="message"
