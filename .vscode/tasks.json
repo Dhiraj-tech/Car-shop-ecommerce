@@ -4,10 +4,26 @@
 		{
 			"type": "npm",
 			"script": "dev",
-			"path": "client",
+			"path": "api",
 			"problemMatcher": [],
-			"label": "npm: dev - client",
-			"detail": "next dev"
+			"label": "npm: dev - api",
+			"detail": "nodemon index.js"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "cms",
+			"problemMatcher": [],
+			"label": "npm: dev - cms",
+			"detail": "nodemon index.js"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "front",
+			"problemMatcher": [],
+			"label": "npm: dev - front",
+			"detail": "nodemon index.js"
 		}
 	]
 }

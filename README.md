@@ -26,5 +26,6 @@ Car-shop-ecommerce is an e-commerce website built with the MERN stack (MongoDB, 
 - [ ] Express
 - [ ] React
 - [ ] Node.js
-- [ ] Next.js
 - [ ] JWT
+
+Deploy on netlify: https://car-shop-ecommerce.netlify.app/
