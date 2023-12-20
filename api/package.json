@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "prod": "node index.js",
-    "generate": "node generate.js"
-  },
+    "build": "npm i"
+    },
   "dependencies": {
     "@types/express": "^4.17.17",
     "bcryptjs": "^2.4.3",
