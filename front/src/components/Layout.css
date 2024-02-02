@@ -922,3 +922,17 @@ table td img {
 #termss{
     width: 85%;
 }
+
+@media (max-width: 767.98px) {
+
+    .slider-text{
+        text-align: center;
+        margin-bottom: -20px;
+      }
+
+    #head1{
+        font-size: 50px;
+    }
+
+}
+
