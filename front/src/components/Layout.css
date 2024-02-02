@@ -913,12 +913,6 @@ table td img {
     height: 70%;
 }
 
-#product-bottom{
-    margin-bottom: -65px;
-}
-
-
-
 #termss{
     width: 85%;
 }
@@ -932,6 +926,10 @@ table td img {
 
     #head1{
         font-size: 50px;
+    }
+
+    #product-image-card {
+        height: auto; /* Adjust the height as needed for smaller screens */
     }
 
 }
